@@ -23,7 +23,7 @@ function chatbotResponse() {
   botMessage = "I'm confused"; //the default message
 
   if (lastUserMessage === 'hi') {
-    botMessage = 'Howdy!';
+    botMessage = 'To help me, to help you, I need to know your age';
   }
 
   if (lastUserMessage === 'name') {
