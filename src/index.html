@@ -11,9 +11,10 @@
 </head>
 
 
-<body onload="greeting">
+<body>
+<!--  <body onload="greeting">-->
 <div id='bodybox'>
-    <img src="images/alissbot_logo.svg"/>
+    <img src="images/alissbot_logo.svg" id="logo"/>
   <div id='chatborder'>
     <p id="chatlog7" class="chatlog">&nbsp;</p>
     <p id="chatlog6" class="chatlog">&nbsp;</p>
@@ -22,7 +23,7 @@
     <p id="chatlog3" class="chatlog">&nbsp;</p>
     <p id="chatlog2" class="chatlog">&nbsp;</p>
     <p id="chatlog1" class="chatlog">&nbsp;</p>
-    <input type="text" name="chat" id="chatbox" placeholder="Hi, I'm Aliss, I'm here to help." onfocus="placeHolder()">
+    <input type="text" name="chat" id="chatbox" placeholder="Hi, I'm chatbox, I'm here to help." onfocus="placeHolder()" onload="greeting()"">
   </div>
   <br>
   <br>
