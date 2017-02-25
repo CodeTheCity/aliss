@@ -26,8 +26,8 @@ function chatbotResponse() {
     botMessage = 'To help me, to help you, I need to know your age';
   }
 
-  if (lastUserMessage === 'name') {
-    botMessage = 'My name is ' + botName;
+  if (lastUserMessage === 'number') {
+    botMessage = 'Do you need immediate help? ' + aliss;
   }
 }
 //****************************************************************
