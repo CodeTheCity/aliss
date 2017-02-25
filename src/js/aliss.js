@@ -19,6 +19,15 @@ var messages = [], //array that hold the record of each string in chat
 //****************************************************************
 //edit this function to change what the chatbot says
 
+//workflow logic
+var botquestions = ["I'm here to help", "do you need immediate support?", "are you under 18?", "wrong", "where"];
+
+var decisionlogic = ["decision, if yes, ask 01 else if no, ask 03", "ask the next question",];
+
+var botanswer = [["21", "http://www.ChildLine.org"], ["20", "http://www.Samaritans.org"], ["4", "http://www.googlemaps.com/2456"]];
+
+var apisources = ["3", "http://www.nationalhelpline.org"];
+
 function greeting()
 {
   botMessage = "greeting"; //initial text shown in chat
