@@ -27,7 +27,7 @@ function chatbotResponse() {
   }
 
   if (lastUserMessage === '19') {
-    botMessage = 'Do you need immediate help and support ' + botName;
+    botMessage = 'Do you need immediate help and support ';
   }
 }
 //****************************************************************
