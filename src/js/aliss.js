@@ -6,11 +6,12 @@ nlp = window.nlp_compromise;
 var messages = [], //array that hold the record of each string in chat
   lastUserMessage = "", //keeps track of the most recent input string from the user
   botMessage = "", //var keeps track of what the chatbot is going to say
-  botName = 'Chatbot', //name of the chatbot
+  botName = 'Aliss', //name of the chatbot
   talking = true; //when false the speach function doesn't work
+  inputAge
 //
 //
-//****************************************************************
+//****************************************************************6
 //****************************************************************
 //****************************************************************
 //****************************************************************
@@ -18,18 +19,42 @@ var messages = [], //array that hold the record of each string in chat
 //****************************************************************
 //****************************************************************
 //edit this function to change what the chatbot says
+function greeting()
+{
+  botMessage = "greeting"; //initial text shown in chat
+
+}
 function chatbotResponse() {
   talking = true;
   botMessage = "I'm confused"; //the default message
 
-  if (lastUserMessage === 'hi') {
-    botMessage = 'To help me, to help you, I need to know your age';
+  if (lastUserMessage === '19') {
+    botMessage = 'Do you need immediate help and support? ';
   }
 
-  if (lastUserMessage === '19') {
-    botMessage = 'Do you need immediate help and support ';
+  if (lastUserMessage === 'hi') {
+    botMessage = 'To help me, to help you, I need to know your age';
+    function ageCheck()
   }
+
 }
+
+function ageCheck()
+{
+  //#get sting nad convert to number
+  ///if number > 18
+  //
+  inputAge = 10;
+  if (inputAge > 18)
+  {
+  botMessage = 'Here is the Samaritans number, 116 123 ';
+  }
+  else {
+  botMessage = 'Here is the ChildLine number, 0800 1111 ';
+  }
+  //else//
+}
+
 //****************************************************************
 //****************************************************************
 //****************************************************************
