@@ -29,13 +29,15 @@ function chatbotResponse() {
 
 
   if (lastUserMessage === 'hi') {
-    botMessage = 'To help me, to help you, I need to know your age';
-    //function ageCheck();
+    botMessage = 'Do you need immediate help and support?'
+  }
+
+  if (lastUserMessage === 'yes') {
+    botMessage = ''
   }
 
   if (lastUserMessage === '19') {
     //botMessage = 'Do you need immediate help and support? ';
-    ageCheck();
   }
 }
 function ageCheck()
