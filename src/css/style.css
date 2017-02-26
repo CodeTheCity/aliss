@@ -5,19 +5,21 @@ body {
   padding-bottom: 15px;
 }
 
+#logoheader {
+    background-color: #1e7abc;
+    width: 100%;
+    padding: 0;
+    
+}
 #bodybox {
   margin: auto;
-  max-width: 550px;
+  max-width: 600px;
   font: 15px arial, sans-serif;
   background-color: white;
   border-style: solid;
+  border-color: #a9a8a9;
   border-width: 1px;
-  padding-top: 20px;
-  padding-bottom: 25px;
-  padding-right: 25px;
-  padding-left: 25px;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
+  background-color: white;
 }
 
 #chatborder {
