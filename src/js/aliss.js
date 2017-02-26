@@ -20,7 +20,9 @@ $(document).ready(function(){
 
   var botanswer = [["21", "Give the caring people at http://www.ChildLine.org a call."], ["20", "Talk to someone, how about The http://www.Samaritans.org"], ["31", "Sure, I can help with that. Tell me your location and I can suggest places of support."], ["4", "http://www.googlemaps.com/2456"]];
 
-  var apisources = [["medical", "http://www.nationalhelpline.org?api="], ["location", "http://www.googlemaps.com?api="]];
+  var apisources = {};
+  apisources.medical = "https://www.aliss.org/api/v2/search/?q=";
+  apisources.location = "https://maps.googleapis.com/maps/api/js?";
 
   var messageCount = 0;
 
@@ -85,10 +87,8 @@ console.log(messageCount);
 
     else if (lastUserMessage === 'anxiety' && messageCount > 4) {
       botMessage = botanswer[2][1];
-    }
-
-    else if (lastUserMessage === 'anxiety' && messageCount > 4) {
-      botMessage = botanswer[2][1];
+      // call the api for resources for this term
+      parseReply("medical", "anxiety");
     }
 
     else if (lastUserMessage === 'location' && messageCount > 4) {
@@ -120,19 +120,18 @@ console.log(messageCount);
     //else//
   };
 
-  function parseReply()
+  function parseReply(contextSuggest, contextIN)
   {
     // e.g seem like medical condition or location info?
-    var contextSuggests = "medical";
     var apiURL = '';
     // make decision tree to decide which data source is most appropriate?
     if(contextSuggest == "medical")
     {
-      apiURL = apisources[0][1];
+      apiURL = apisources.medical + 'anxiety/';
     }
     else if(contextSuggest == "medical")
     {
-      apiURL = apisources[1][1];
+      apiURL = apisources.location + placelocation;
 
     }
     // given context make appropriate API call to source data
@@ -140,11 +139,15 @@ console.log(messageCount);
 
   };
 
-  function makeAPIcall()
+  function makeAPIcall(URLin)
   {
-    $.get( "ajax/test.html", function( data ) {
-      return data;
-});
+    var apiDatareturned = '';
+
+    $.get( URLin, function( data ) {
+
+        apiDatareturned = data;
+console.log(apiDatareturned);
+    });
 
   };
 
