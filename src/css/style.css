@@ -11,6 +11,15 @@ body {
     padding: 0;
     
 }
+
+#introText
+{
+width: 80%
+color: #2fbba6:
+font-weight:600;
+font-size: 16px:
+text-align:  justified;
+}
 #bodybox {
   margin: auto;
   max-width: 600px;
