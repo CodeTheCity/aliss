@@ -69,18 +69,33 @@ body {
   width: 100%;
 }
 
-.botChatAvatar img
-{
-    padding-right: 50px;
-}
-
 .botChatText
 {
-     margin-left: 70px;
+/*
+    margin-left: 70px;
     margin-top: -4em;
-    background-color: lightgray;
+*/
     padding: 1em;
+    margin-bottom: 1em;
+
+    background-color: lightgray;
+    
+    float: left;
+    clear: both;
 }
+.botChatAvatar 
+{
+    float: right;
+}
+    
+.botChatAvatar img
+{
+/*
+    padding-right: 50px;
+}
+*/
+
+
 .userChatText
 {
      margin-left: 0px;
