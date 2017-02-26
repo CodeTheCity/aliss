@@ -53,17 +53,23 @@ $(document).ready(function(){
     // append text / ui interation code to placeholder
     var placerContent = "#chatlog" + messageCount;
       
-       var userMessageFormatting = '<p class="userChatAvatar">' ;
-      userMessageFormatting += '<img src="/src/images/user_avatar2.png" width="50px "/>';
-     // chatMessageFormatting +=  "*";
-      userMessageFormatting +=  '</p><p class="userChatText">';
-      userMessageFormatting += 'botMessage';
-      console.log(userMessageFormatting);   
-      $(placerBot).html(userMessageFormatting );
+      var userMessageFormatting = ' ';
+      
+      //Avatar Format
+      userMessageFormatting += '<div class="userChatAvatar">' ;
+      userMessageFormatting += '<img src="/src/images/user_avatar.png" width="50px "/>';
+      userMessageFormatting += '</div>';
+      
+      //User Message
+      userMessageFormatting +=  '<div class="userChatText">';
+      userMessageFormatting += lastUserMessage;
+      userMessageFormatting += '</div>';
 
+      $(placerContent).append(userMessageFormatting);  
       
-      
-    $(placerContent).append('<p class="userChatText">' + lastUserMessage + '</p>');
+     // Orginal working placerContent
+     //$(placerContent).append('<p class="userChatText">' + lastUserMessage + '</p>');
+
     messageCount++;
 
     var placerBot = '<div id="chatlogbot' + messageCount + '" class="chatlog"></div>';
@@ -109,6 +115,7 @@ console.log(messageCount);
 
     //add the chatbot's name and message to the array messages
     messages.push("<b>" + botName + ":</b> " + botMessage);
+    
     // says the message using the text to speech function written below
     Speech(botMessage);
 
@@ -121,11 +128,9 @@ console.log(messageCount);
       // HTML formatting
       var chatMessageFormatting = ' ';
       
-  
       
       // Bot Message
       chatMessageFormatting +=  '<div class="botChatText">';
-          
       chatMessageFormatting += botMessage;
       chatMessageFormatting += '</div>'
             
@@ -135,7 +140,6 @@ console.log(messageCount);
       chatMessageFormatting +=  '</div>';
 
       $(placerBot).html(chatMessageFormatting);
-      //$(placerBot).html(chatMessageFormatting);
 
   };
 

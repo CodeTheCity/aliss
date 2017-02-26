@@ -59,22 +59,27 @@ body {
 }
 
 .chatlog { 
-   font: 15px arial, sans-serif;
-   color: gray;
+    font: 15px arial, sans-serif;
+    color: gray;
+    clear: both; 
+}
+/*there is an initial empty userMessage section at the top to hide */
+
+#chatlog1
+{
+   display: none; 
 }
 
 #chatbox {
   font: 17px arial, sans-serif;
-  height: 22px;
+  height: 2em;
   width: 100%;
 }
 
 .botChatText
 {
-/*
-    margin-left: 70px;
-    margin-top: -4em;
-*/
+    width: 80%;
+    
     padding: 1em;
     margin-bottom: 1em;
 
@@ -90,19 +95,28 @@ body {
     
 .botChatAvatar img
 {
-/*
-    padding-right: 50px;
+
+/*    padding-right: 50px;*/
 }
-*/
 
-
-.userChatText
+.userChatAvatar
 {
-     margin-left: 0px;
-    margin-top: 0em;
-    background-color: lightgray;
-    padding: 1em;
+    float: left;
 }
+.userChatText
+{   
+    width: 80%;
+    
+    margin-bottom: 1em;
+    padding: 1em;
+    
+    float: left;
+    
+    color: white;
+    background-color: slategray;
+    font-style: italic;
+}
+    
 h1 {
   margin: auto;
 }
