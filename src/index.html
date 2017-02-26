@@ -14,31 +14,33 @@
 <body>
 <!--  <body onload="greeting">-->
 <div id='bodybox'>
-<header>
+    <header>
+        
+        <div id="logoheader" width="100%">
+        <img src="images/alissbot_logo_inverse.svg" id="logo"/>
+        </div>
 
-    <div id="logoheader" width="100%">
-    <img src="images/alissbot_logo_inverse.svg" id="logo"/>
+    </header>
+    <div id='introText'>
+	
+		<p>Welcome message....</p>
+
+	</div>
+    <div id='chatborder'>
+        <div id="chat-conversation"></div>
+        <input type="text" name="chat" id="chatbox" placeholder="Hi, I'm ALISS, I'm here to help." onfocus="placeHolder()">
     </div>
-
-		<div id='introText'>
-
-		<p>ALISS Bot is here to help you find local resources that supports your health and wellbeing.</p>
+ </div> 
+    <footer>
+        <div id='footerText' margin-top='2em'>
 	
 		<p>We want you to feel safe when using ALISS Bot so we make sure your privacy is protected.</p>
 	
 		<p>Check out our Terms & Conditions and Privacy Policy here.</p>
 
 		</div>
-<header>
+    </footer>
 
-  <div id='chatborder'>
-    <div id="chat-conversation"></div>
-    <input type="text" name="chat" id="chatbox" placeholder="Hi, I'm ALISS, I'm here to help." onfocus="placeHolder()">
-  </div>
-
-<footer>
-
-</footer>
 </body>
 
 </html>

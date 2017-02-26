@@ -11,14 +11,30 @@ body {
     padding: 0;
     
 }
-
 #introText
 {
-width: 80%;
-color: #2fbba6;
-font-weight:600;
-font-size: 16px;
-text-align:  justified;
+    width: 80%;
+    color: #2fbba6;
+    font-weight: 600;
+    font-size: 1px;
+    text-align: justify;
+
+    
+     margin: auto;
+  max-width: 600px;
+ padding: 1em;
+}
+
+#footerText
+{
+    width: 80%;
+    color: #2fbba6;
+    font-size: 12px;
+    text-align: center;
+    color: dimgray;
+    margin: auto;
+    max-width: 600px;
+
 }
 #bodybox {
   margin: auto;
@@ -53,6 +69,25 @@ text-align:  justified;
   width: 100%;
 }
 
+.botChatAvatar img
+{
+    padding-right: 50px;
+}
+
+.botChatText
+{
+     margin-left: 70px;
+    margin-top: -4em;
+    background-color: lightgray;
+    padding: 1em;
+}
+.userChatText
+{
+     margin-left: 0px;
+    margin-top: 0em;
+    background-color: lightgray;
+    padding: 1em;
+}
 h1 {
   margin: auto;
 }
