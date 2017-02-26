@@ -23,9 +23,6 @@ body {
 }
 
 #chatborder {
-  border-style: solid;
-  background-color: #f6f9f6;
-  border-width: 3px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -34,7 +31,6 @@ body {
   padding-bottom: 15px;
   padding-right: 20px;
   padding-left: 15px;
-  border-radius: 15px;
 }
 
 .chatlog {
