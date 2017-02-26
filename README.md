@@ -11,3 +11,4 @@ https://codepen.io/lilgreenland/pen/pyVvqB
 
 
 Demo ALISS chatbot at http://www.aboynejames.co.uk/codethecity/aliss/
+ALISS API docs - http://aliss.readthedocs.io/en/latest/search_api/
