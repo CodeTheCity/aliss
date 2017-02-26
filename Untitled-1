@@ -1,0 +1,20 @@
+#introText
+{
+    width: 80%;
+    color: #2fbba6;
+    font-weight: 600;
+    font-size: 1px;
+    text-align: justify;
+
+    
+     margin: auto;
+  max-width: 600px;
+ padding: 1em;
+}
+
+    
+       var userMessageFormatting = '<p class="userChatAvatar">' ;
+      userMessageFormatting += '<img src="/src/images/user_avatar2.png" width="50px "/>';
+     // chatMessageFormatting +=  "*";
+      userMessageFormatting +=  '</p><p class="userChatText">';
+      //userMessageFormatting += 'botMessage
