@@ -5,25 +5,33 @@ body {
   padding-bottom: 15px;
 }
 
+#logoheader {
+    background-color: #1e7abc;
+    width: 100%;
+    padding: 0;
+    
+}
+
+#introText
+{
+width: 80%;
+color: #2fbba6;
+font-weight:600;
+font-size: 16px;
+text-align:  justified;
+}
 #bodybox {
   margin: auto;
-  max-width: 550px;
+  max-width: 600px;
   font: 15px arial, sans-serif;
   background-color: white;
   border-style: solid;
+  border-color: #a9a8a9;
   border-width: 1px;
-  padding-top: 20px;
-  padding-bottom: 25px;
-  padding-right: 25px;
-  padding-left: 25px;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
+  background-color: white;
 }
 
 #chatborder {
-  border-style: solid;
-  background-color: #f6f9f6;
-  border-width: 3px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -32,11 +40,11 @@ body {
   padding-bottom: 15px;
   padding-right: 20px;
   padding-left: 15px;
-  border-radius: 15px;
 }
 
-.chatlog {
+.chatlog { 
    font: 15px arial, sans-serif;
+   color: gray;
 }
 
 #chatbox {

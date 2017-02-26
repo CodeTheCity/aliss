@@ -107,7 +107,14 @@ console.log(messageCount);
 
     // add the bots next prompt messageCount
     var placerBot = "#chatlogbot" + messageCount;
-    $(placerBot).html("<b>" + botName + ":</b> " + botMessage);
+    //$(placerBot).html("<b>" + botName + ":</b> " + botMessage);
+    var chatMessageFormatting = '<p>' ;
+      chatMessageFormatting
+      += '<img src="/src/images/aliss_avatar2.png"/>';
+     // chatMessageFormatting +=  "*";
+      chatMessageFormatting +=  "</p>";
+      
+      $(placerBot).html(chatMessageFormatting + "<b>" + botName + ":</b> " + botMessage);
 
   };
 
