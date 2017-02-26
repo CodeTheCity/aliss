@@ -33,8 +33,9 @@ body {
   padding-left: 15px;
 }
 
-.chatlog {
+.chatlog { 
    font: 15px arial, sans-serif;
+   color: gray;
 }
 
 #chatbox {
