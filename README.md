@@ -9,4 +9,5 @@ Tech template
 
 https://codepen.io/lilgreenland/pen/pyVvqB
 
-or look at http://www.designrazor.net/best-free-bootstrap-chat-templates/
+
+Demo ALISS chatbot at http://www.aboynejames.co.uk/codethecity/aliss/
