@@ -11,6 +11,8 @@ $(document).ready(function(){
     botMessage = "", //var keeps track of what the chatbot is going to say
     botName = 'ALISS bot', //name of the chatbot
     talking = true; //when false the speach function doesn't work
+  var liveALISSresults = {};
+  var liveMedical = '';
 
   //edit this function to change what the chatbot says
   //workflow logic
@@ -18,9 +20,10 @@ $(document).ready(function(){
 
   var decisionlogic = ["decision, if yes, ask 01 else if no, ask 03", "ask the next question",];
 
-  var botanswer = [["21", "Give the caring people at http://www.ChildLine.org a call."], ["20", "Talk to someone, how about The http://www.Samaritans.org"], ["31", "Sure, I can help with that. Tell me your location and I can suggest places of support."], ["4", "http://www.googlemaps.com/2456"]];
+  var botanswer = [["21", "Give the caring people at http://www.ChildLine.org a call."], ["20", "Talk to someone, how about The http://www.Samaritans.org"], ["31", "Sure, I can help with that. Tell me your location and I can suggest places of support."], ["4", 'Click on the map link <div id="mapurl"></div>']];
 
   var apisources = {};
+  apisources.aliss = "https://www.aliss.org/api/v2/search/?q=";
   apisources.medical = "https://www.aliss.org/api/v2/search/?q=";
   apisources.location = "https://maps.googleapis.com/maps/api/js?";
 
@@ -63,12 +66,11 @@ console.log(messageCount);
     if (lastUserMessage === 'yes' && messageCount == 4) {
 
       botMessage = botquestions[1];
-
     }
 
     else if (lastUserMessage === 'no' && messageCount == 4) {
-      botMessage = botquestions[2];
 
+      botMessage = botquestions[2];
     }
 
     else if (lastUserMessage === 'yes' && messageCount > 4) {
@@ -87,14 +89,16 @@ console.log(messageCount);
 
     else if (lastUserMessage === 'anxiety' && messageCount > 4) {
       botMessage = botanswer[2][1];
+      liveMedical = lastUserMessage;
       // call the api for resources for this term
       parseReply("medical", "anxiety");
     }
 
-    else if (lastUserMessage === 'location' && messageCount > 4) {
+    else if (lastUserMessage == 'Aberdeen' && messageCount > 6) {;
       botMessage = botanswer[3][1];
-    }
+      parseReply("location", "Aberdeen");
 
+    }
 
     //add the chatbot's name and message to the array messages
     messages.push("<b>" + botName + ":</b> " + botMessage);
@@ -127,27 +131,66 @@ console.log(messageCount);
     // make decision tree to decide which data source is most appropriate?
     if(contextSuggest == "medical")
     {
-      apiURL = apisources.medical + 'anxiety/';
+      apiURL = apisources.medical + contextIN;
+      // given context make appropriate API call to source data
+      makeAPIcall(apiURL, contextIN);
     }
-    else if(contextSuggest == "medical")
+    else if(contextSuggest == "location")
     {
-      apiURL = apisources.location + placelocation;
-
+      // match from list of ALISS api data results
+      apiURL = apisources.aliss + liveMedical +'&location=' + contextIN;
+      // given context make appropriate API call to source data
+      makeAPIcallcontextlocation(apiURL, contextIN);
     }
-    // given context make appropriate API call to source data
-    makeAPIcall(apiURL);
+
 
   };
 
-  function makeAPIcall(URLin)
+  function makeAPIcall(URLin, contextIN)
   {
     var apiDatareturned = '';
 
     $.get( URLin, function( data ) {
 
-        apiDatareturned = data;
-console.log(apiDatareturned);
+        liveALISSresults = data;
+        // extract the information and make available to UI
+        //dataExtractionCondition(liveALISSresults);
+
     });
+
+  };
+
+  function makeAPIcallcontextlocation(URLin, contextIN)
+  {
+    var apiDatareturned = '';
+    $.get( URLin, function( data ) {
+        liveALISSresults = data;
+        // extract the information and make available to UI
+        dataExtractionCondition(liveALISSresults);
+
+    });
+
+  };
+
+  function dataExtractionCondition(dataIN)
+  {
+      matchLocation(dataIN.results[1].locations[0].lat, dataIN.results[1].locations[0].lon)
+//    dataIN.results.forEach(function(extractElements) {
+//console.log(extractElements);
+      // need logic to extract top results cor ordincates
+
+  //  });
+
+  };
+
+  // format google map URL
+  function matchLocation(latIN, longIN)
+  {
+
+    var mapurlUIlink = '<a href="' + apisources.location + 'lat=' + latIN + '&lon=' + longIN + '">Aberdeen</a>';
+
+    // attach to UI as a reply  temp hack
+    $("#mapurl").html("<b>" + mapurlUIlink + ":</b> ");
 
   };
 
