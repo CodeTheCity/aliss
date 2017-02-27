@@ -56,17 +56,13 @@ $(document).ready(function(){
     // append text / ui interation code to placeholder
     var placerContent = "#chatlog" + messageCount;
 
-       var userMessageFormatting = '<p class="userChatAvatar">' ;
-      userMessageFormatting += '<img src="/src/images/user_avatar2.png" width="50px "/>';
-     // chatMessageFormatting +=  "*";
-      userMessageFormatting +=  '</p><p class="userChatText">';
-      userMessageFormatting += 'botMessage';
-      console.log(userMessageFormatting);
-      $(placerBot).html(userMessageFormatting );
+      var userMessageFormatting = '';
+      userMessageFormatting +=  '<span class="userChatText">' + lastUserMessage + '</span>';
+      userMessageFormatting += '<span class="userChatAvatar">';
+      userMessageFormatting += '<img src="images/user_avatar.png" width="50px "/></span>';
 
 
-
-    $(placerContent).append('<p class="userChatText">' + lastUserMessage + '</p>');
+      $(placerContent).append(userMessageFormatting);
     messageCount++;
 
     var placerBot = '<div id="chatlogbot' + messageCount + '" class="chatlog"></div>';
@@ -121,9 +117,9 @@ console.log(messageCount);
     //$(placerBot).html("<b>" + botName + ":</b> " + botMessage);
     var chatMessageFormatting = '<p class=" botChatAvatar">' ;
       chatMessageFormatting
-      += '<img src="/src/images/aliss_avatar2.png" width="50px "/>';
+      += '<img src="images/aliss_avatar2.png" width="50px "/></p>';
      // chatMessageFormatting +=  "*";
-      chatMessageFormatting +=  '</p><p class="botChatText">';
+      chatMessageFormatting +=  '<p class="botChatText">';
 
       $(placerBot).html(chatMessageFormatting + botMessage + " </p>");
 
