@@ -55,17 +55,17 @@ $(document).ready(function(){
 
     // append text / ui interation code to placeholder
     var placerContent = "#chatlog" + messageCount;
-      
+
        var userMessageFormatting = '<p class="userChatAvatar">' ;
       userMessageFormatting += '<img src="/src/images/user_avatar2.png" width="50px "/>';
      // chatMessageFormatting +=  "*";
       userMessageFormatting +=  '</p><p class="userChatText">';
       userMessageFormatting += 'botMessage';
-      console.log(userMessageFormatting);   
+      console.log(userMessageFormatting);
       $(placerBot).html(userMessageFormatting );
 
-      
-      
+
+
     $(placerContent).append('<p class="userChatText">' + lastUserMessage + '</p>');
     messageCount++;
 
@@ -124,7 +124,7 @@ console.log(messageCount);
       += '<img src="/src/images/aliss_avatar2.png" width="50px "/>';
      // chatMessageFormatting +=  "*";
       chatMessageFormatting +=  '</p><p class="botChatText">';
-      
+
       $(placerBot).html(chatMessageFormatting + botMessage + " </p>");
 
   };
